@@ -1,0 +1,6 @@
+node_modules/
+dist/
+web/data.js
+reports/
+web/private.js
+web/public.js

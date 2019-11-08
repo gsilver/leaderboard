@@ -1,0 +1,10 @@
+{
+  "COMPLY_SERVER_URL": "https://wsumich.dequecloud.com/worldspace",
+  "COMPLY_USERNAME": "",
+  "COMPLY_PASSWORD": "",
+  "KEYCLOAK_AUTH_URL": "https://wsumich.dequecloud.com/auth/realms/worldspace-comply/protocol/openid-connect/token",
+  "KEYCLOAK_CLIENT_ID": "comply-custom-reporter",
+  "REPORT_FILENAME": "report.json",
+  "HISTORY_DAYS": null,
+  "HISTORY_MONTHS": 4
+}

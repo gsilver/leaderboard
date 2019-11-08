@@ -1,0 +1,112 @@
+$firstColumnWidth: 20vw;
+$headerBackgroundColor: #f2f2f2;
+$rowHeaderBackgroundColor: #f4f4f4;
+$rowBackgroundColor: white;
+$altRowBackgroundColor: #f8f8f8;
+$borderColor: #eceeef;
+$cellPadding: .25rem;
+
+@mixin hasFlex {
+  display: flex;
+}
+
+@mixin isFlexed {
+  flex: 1;
+}
+
+@mixin isNotFlexed($width: 20vw) {
+  flex: 0 0 $width !important;
+}
+
+.has-flex {
+  @include hasFlex;
+}
+
+.is-flexed {
+  @include isFlexed;
+}
+
+.is-not-flexed {
+  @include isNotFlexed();
+}
+
+[role="grid"] {
+
+  [role="row"] {
+    border-top: 1px solid $borderColor;
+
+    &:nth-child(odd) {
+      background: $altRowBackgroundColor;
+    }
+
+    &:nth-child(even) {
+      background: $rowBackgroundColor;
+    }
+
+    [role="columnheader"].is-flexed {
+      border-left: 1px solid $borderColor;
+    }
+  }
+
+  [role="gridcell"],
+  [role="columnheader"],
+  [role="rowheader"] {
+    padding: $cellPadding;
+
+    .btn {
+      font-size: 80%;
+      padding: .5rem .75rem;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-bottom: 1rem;
+  }
+}
+
+.header-row {
+  border-bottom: 1px solid $borderColor;
+  background: $rowHeaderBackgroundColor;
+  font-weight: 700;
+}
+
+.row-header,
+.column-header,
+[role="rowheader"],
+[role="columnheader"] {
+  font-weight: 700;
+}
+
+.details {
+  display: none;
+  font-size: 90%;
+
+  &.is-expanded {
+    display: block;
+  }
+
+  .data {
+    display: inline-block;
+    width: 50%;
+    border-left: 1px solid $borderColor;
+  }
+}
+
+.visually-hidden {
+  display: block;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip: rect(1px 1px 1px 1px);
+  overflow: hidden;
+}
+
+// override bootstraps rounded corners
+.btn {
+  border-radius: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
